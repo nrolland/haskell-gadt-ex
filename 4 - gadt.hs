@@ -25,3 +25,13 @@ eval (Eq  e1 e2) = eval e1 == eval e2
 
 -- To summarise, GADTs allows us to RESTRICT the return types of constructors 
 -- and thus enable us to take advantage of Haskell's type system for our DSL
+   
+data FooInGadtClothing a where
+ MkFooInGadtClothing :: a -> FooInGadtClothing a
+
+--which is no different from:  data Haskell98Foo a = MkHaskell98Foo a ,
+
+--by contrast, consider:
+
+data TrueGadtFoo a where
+  MkTrueGadtFoo :: a -> TrueGadtFoo Int
