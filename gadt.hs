@@ -12,4 +12,4 @@ eval (I n) = n
 eval (B b) = b
 eval (Add e1 e2) = eval e1 + eval e2
 eval (Mul e1 e2) = eval e1 * eval e2
-eval (eq  e1 e2) = eval e1 == eval e2
+eval (Eq  e1 e2) = eval e1 == eval e2
