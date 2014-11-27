@@ -1,7 +1,7 @@
 {-#LANGUAGE GADTs #-}
 -- here we bind the restricted type to their constructors
 -- and we ask the type checker to remember that association
--- the VALUE gives you the precise TYPE
+-- the VALUE constructed gives you the precise TYPE
 
 data Expr a where
     I   :: Int  -> Expr Int
@@ -21,3 +21,7 @@ eval (B b) = b
 eval (Add e1 e2) = eval e1 + eval e2
 eval (Mul e1 e2) = eval e1 * eval e2
 eval (Eq  e1 e2) = eval e1 == eval e2
+
+
+-- To summarise, GADTs allows us to RESTRICT the return types of constructors 
+-- and thus enable us to take advantage of Haskell's type system for our DSL
