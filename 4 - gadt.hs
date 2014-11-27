@@ -1,7 +1,7 @@
 {-#LANGUAGE GADTs #-}
 -- here we bind the restricted type to their constructors
 -- and we ask the type checker to remember that association
--- the value gives you the type
+-- the VALUE gives you the precise TYPE
 
 data Expr a where
     I   :: Int  -> Expr Int
